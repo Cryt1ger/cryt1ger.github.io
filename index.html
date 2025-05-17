@@ -147,46 +147,99 @@
   <main>
     <aside class="sidebar">
         <ul>
-
-            <li>Простые алгоритмы слежки</li>
-            <li>Завтраки для нейросетей</li>
-            <li>Салаты из предпочтений</li>
-
-            <li class="active">Продажа личных данных</li>
-            <li>Фичи в обмен на приватность</li>
-            <li>Пицца с согласием на cookies</li>
-            <li>Морепродукты из даркнета</li>
-            <li>Гарниры из персонализации</li>
+            <li id="constructor-tab" class="active">Собери свой конструктор</li>
+            <li id="data-tab">Продажа личных данных</li>
             <li>Для самых маленьких</li>
           </ul>
     </aside>
 
     <section class="content">
-      <h1>Готовые печеньки</h1>
-      <div class="grid">
-        <div class="card">
-          <img src="C:\Users\Danya\Downloads\photo_2025-05-17_16-34-05.jpg" alt="Котлеты" />
-          <div class="info">Мама двух ангелочков · 119 🍪</div>
-        </div>
-        <div class="card">
-          <img src="C:\Users\Danya\Downloads\photo_2025-05-17_16-34-01.jpg" alt="Бефстроганов" />
-          <div class="info">Конкурент Илона Маска · 99 🍪</div>
-        </div>
-        <div class="card">
-          <img src="C:\Users\Danya\Downloads\photo_2025-05-17_16-41-20.jpg" alt="Каре барашка" />
-          <div class="info">Очарованный странник  · 49🍪 мин</div>
-        </div>
-        <div class="card">
-            <img src="C:\Users\Danya\Downloads\photo_2025-05-17_16-41-20.jpg" alt="Каре барашка" />
-            <div class="info">Криптоинвестор из силиконовой долины  · 5🍪</div>
-          </div>
-        <div class="card">
-          <img src="C:\Users\Danya\Downloads\photo_2025-05-17_16-41-13.jpg" alt="Пастуший пирог" />
-          <div class="info">Счастливый садовод · Нет в наличии</div>
-        </div>
+        <div id="constructor-content">
+            <h1>Собери свой конструктор:</h1>
+            <form>
+              <fieldset>
+                <legend>🔵Образование и интеллект</legend>
+                <label><input type="checkbox" name="edu" value="phd"> PhD по визуальному искусству</label><br>
+                <label><input type="checkbox" name="edu" value="mba"> Гарвардский MBA: эмуляция</label><br>
+                <label><input type="checkbox" name="edu" value="telegram"> Экспертный Telegram-канал</label><br>
+                <label><input type="checkbox" name="edu" value="medium"> 92 статьи на Medium</label><br>
+                <label><input type="checkbox" name="edu" value="tedx"> Спикер на TEDx</label>
+              </fieldset>
+        
+              <fieldset>
+                <legend>🔴Опыт и локации</legend>
+                <label><input type="checkbox" name="exp" value="30countries"> Посетил 30 стран</label><br>
+                <label><input type="checkbox" name="exp" value="tbilisi"> Жил в Тбилиси и Барселоне</label><br>
+                <label><input type="checkbox" name="exp" value="burningman"> Burning Man 2019</label><br>
+                <label><input type="checkbox" name="exp" value="nepal"> Год в деревне в Непале</label>
+              </fieldset>
+              <fieldset>
+                <legend>🔴Финансы</legend>
+                <label><input type="checkbox" name="exp" value="30countries"> Владение яхтой </label><br>
+                <label><input type="checkbox" name="exp" value="tbilisi">  Постоянный клиент Farfetch / SSENSE</label><br>
+                <label><input type="checkbox" name="exp" value="burningman"> Участие в закрытом NFT-клубе </label><br>
+              </fieldset>
+              <fieldset>
+                <legend>⚫Имидж</legend>
+                <label><input type="checkbox" name="exp" value="30countries"> Инстаграм в стиле brutal chic (50K подписчиков)</label><br>
+                <label><input type="checkbox" name="exp" value="tbilisi"> Участвовал в съёмке клипа локального рэпера</label><br>
+              </fieldset>
 
-      </div>
-    </section>
+              <fieldset>
+                <legend>⚫Культура</legend>
+                <label><input type="checkbox" name="exp" value="30countries">  Членство в локальном шахматном клубе</label><br>
+                <label><input type="checkbox" name="exp" value="tbilisi"> Кинокритик Letterboxd с рейтингом 4.6</label><br>
+              </fieldset>
+
+            </form>
+          </div>
+      
+        <div id="data-content" style="display: none;">
+          <h1>Готовые печеньки:</h1>
+          <div class="grid">
+            <div class="card">
+              <img src="C:\Users\Danya\Downloads\photo_2025-05-17_16-34-05.jpg" alt="Котлеты" />
+              <div class="info">Мама двух ангелочков · 119 🍪</div>
+            </div>
+            <div class="card">
+              <img src="C:\Users\Danya\Downloads\photo_2025-05-17_16-34-01.jpg" alt="Бефстроганов" />
+              <div class="info">Конкурент Илона Маска · 99 🍪</div>
+            </div>
+            <div class="card">
+              <img src="C:\Users\Danya\Downloads\photo_2025-05-17_16-41-20.jpg" alt="Каре барашка" />
+              <div class="info">Очарованный странник  · 49🍪 мин</div>
+            </div>
+            <div class="card">
+              <img src="C:\Users\Danya\Downloads\photo_2025-05-17_16-41-20.jpg" alt="Каре барашка" />
+              <div class="info">Криптоинвестор из силиконовой долины  · 5🍪</div>
+            </div>
+            <div class="card">
+              <img src="C:\Users\Danya\Downloads\photo_2025-05-17_16-41-13.jpg" alt="Пастуший пирог" />
+              <div class="info">Счастливый садовод · Нет в наличии</div>
+            </div>
+          </div>
+        </div>
+      </section>
   </main>
+  <script>
+    const constructorTab = document.getElementById('constructor-tab');
+    const dataTab = document.getElementById('data-tab');
+    const constructorContent = document.getElementById('constructor-content');
+    const dataContent = document.getElementById('data-content');
+  
+    constructorTab.addEventListener('click', () => {
+      constructorTab.classList.add('active');
+      dataTab.classList.remove('active');
+      constructorContent.style.display = 'block';
+      dataContent.style.display = 'none';
+    });
+  
+    dataTab.addEventListener('click', () => {
+      dataTab.classList.add('active');
+      constructorTab.classList.remove('active');
+      constructorContent.style.display = 'none';
+      dataContent.style.display = 'block';
+    });
+  </script>
 </body>
 </html>
