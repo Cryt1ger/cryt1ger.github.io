@@ -1,81 +1,192 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Прайс-чекер</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: white;
-            color: black;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-        }
-        input, button {
-            width: 80%;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 18px;
-        }
-        button {
-            background-color: orange;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: darkorange;
-        }
-        .result {
-            font-size: 20px;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Кукиш.Скамейка</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      margin: 0;
+      background: #fff;
+      color: #1d1d1d;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .logo span {
+      color: #0f9eff;
+    }
+    .search input {
+      width: 280px;
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+    }
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .status .delivery {
+      font-size: 0.9rem;
+      line-height: 1.2;
+      text-align: right;
+    }
+    .status .delivery div:first-child {
+      font-weight: bold;
+    }
+    .plus {
+      background: #f6f6ff;
+      padding: 0.3rem 0.7rem;
+      border-radius: 12px;
+      font-weight: 600;
+      color: #0f9eff;
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+    main {
+      display: flex;
+    }
+    .sidebar {
+      width: 240px;
+      padding: 2rem 1rem;
+      background: #f9f9f9;
+      border-right: 1px solid #eee;
+      height: 100vh;
+      position: sticky;
+      top: 80px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar li {
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .sidebar li:hover {
+      background: #ececec;
+    }
+    .sidebar li.active {
+      background: #dceeff;
+      font-weight: 600;
+    }
+    .content {
+      flex: 1;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px #eee;
+      position: relative;
+      background: #fff;
+    }
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+    .card .info {
+      position: absolute;
+      bottom: 10px;
+      left: 12px;
+      color: white;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Интерактивный терминал</h1>
-        <input type="text" id="search" placeholder="Введите название или артикул товара">
-        <button onclick="checkPrice()">Проверить наличие и цену</button>
-        <button onclick="scanBarcode()">Сканировать штрих-код</button>
-        <div class="result" id="result"></div>
-        <button onclick="callConsultant()">Вызвать консультанта</button>
-        <button onclick="rateService()">Оценить сервис</button>
+  <header>
+    <div class="logo">Кукиш<span>.Скамейка</span></div>
+    <div class="search">
+      <input type="text" placeholder="Найти инфопродукт..." />
     </div>
+    <div class="status">
+      <div class="delivery">
+        <div>5–15 мин</div>
+        <div style="color: #777;">Доставка от 0 ₽</div>
+      </div>
+      <div class="plus">76 🍪</div>
+    </div>
+  </header>
 
-    <script>
-        function checkPrice() {
-            let query = document.getElementById('search').value.toLowerCase();
-            if (query === "дайсон") {
-                document.getElementById('result').innerHTML = "Цена: 13590 руб.<br>Наличие: на складе";
-            } else if (query) {
-                document.getElementById('result').innerHTML = "Цена: 4999 руб.<br>Наличие: В наличии";
-            } else {
-                document.getElementById('result').innerHTML = "Введите название или артикул товара.";
-            }
-        }
-        
-        function scanBarcode() {
-            alert("Функция сканирования штрих-кода в разработке.");
-        }
-        
-        function callConsultant() {
-            alert("Консультант уже направляется к вам!");
-        }
-        
-        function rateService() {
-            let rating = prompt("Оцените сервис от 1 до 5 звёзд:");
-            if (rating >= 1 && rating <= 5) {
-                alert("Спасибо за вашу оценку!");
-            } else {
-                alert("Пожалуйста, введите число от 1 до 5.");
-            }
-        }
-    </script>
+
+  <main>
+    <aside class="sidebar">
+        <ul>
+
+            <li>Простые алгоритмы слежки</li>
+            <li>Завтраки для нейросетей</li>
+            <li>Салаты из предпочтений</li>
+
+            <li class="active">Продажа личных данных</li>
+            <li>Фичи в обмен на приватность</li>
+            <li>Пицца с согласием на cookies</li>
+            <li>Морепродукты из даркнета</li>
+            <li>Гарниры из персонализации</li>
+            <li>Для самых маленьких</li>
+          </ul>
+    </aside>
+
+    <section class="content">
+      <h1>Готовые печеньки</h1>
+      <div class="grid">
+        <div class="card">
+          <img src="C:\Users\Danya\Downloads\photo_2025-05-17_16-34-05.jpg" alt="Котлеты" />
+          <div class="info">Мама двух ангелочков · 119 🍪</div>
+        </div>
+        <div class="card">
+          <img src="C:\Users\Danya\Downloads\photo_2025-05-17_16-34-01.jpg" alt="Бефстроганов" />
+          <div class="info">Конкурент Илона Маска · 99 🍪</div>
+        </div>
+        <div class="card">
+          <img src="C:\Users\Danya\Downloads\photo_2025-05-17_16-41-20.jpg" alt="Каре барашка" />
+          <div class="info">Очарованный странник  · 49🍪 мин</div>
+        </div>
+        <div class="card">
+            <img src="C:\Users\Danya\Downloads\photo_2025-05-17_16-41-20.jpg" alt="Каре барашка" />
+            <div class="info">Криптоинвестор из силиконовой долины  · 5🍪</div>
+          </div>
+        <div class="card">
+          <img src="C:\Users\Danya\Downloads\photo_2025-05-17_16-41-13.jpg" alt="Пастуший пирог" />
+          <div class="info">Счастливый садовод · Нет в наличии</div>
+        </div>
+
+      </div>
+    </section>
+  </main>
 </body>
 </html>
